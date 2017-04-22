@@ -1,9 +1,6 @@
 // AngularJS App Initialization
 var app = angular.module('nagariyaApp', ['ngRoute', 'firebase']);
 
-// Firebase User Model
-var user;
-
 // Firebase References
 
 // Routes
@@ -29,15 +26,15 @@ app.config(['$routeProvider', function($routeProvider) {
 
 // Controllers
 // Login Controller
-app.controller('LoginController', function($scope, $window) {
+app.controller('LoginController', function($scope, $rootScope, $window) {
   $scope.signInWithGoogle = function() {
     var provider = new firebase.auth.GoogleAuthProvider();
     provider.addScope('https://www.googleapis.com/auth/plus.login');
 
     firebase.auth().signInWithPopup(provider).then(function(result) {
       var token = result.credential.accessToken;
-      user = result.user;
-      console.log(user);
+      $rootScope.loggedInUser = result.user;
+      console.log($rootScope.loggedInUser);
 
       $window.location.assign('#/home');
     }).catch(function(error) {
@@ -58,12 +55,9 @@ app.controller('HomeController', function($scope, $window) {
 });
 
 // Profile Controller
-app.controller('ProfileController', function($scope, $window) {
-  /* if (user == null) {
-    $window.location.assign('#/login');
-  } */
+app.controller('ProfileController', function($scope, $rootScope, $window) {
 
-  $scope.displayName = user.displayName;
+  $scope.displayName = $rootScope.loggedInUser.displayName;
 
 });
 
