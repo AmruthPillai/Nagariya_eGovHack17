@@ -1,5 +1,5 @@
 body {
-  background: url('../images/paisley.png') repeat;
+  background: url('../images/rockywall.png') repeat;
 }
 
 a, a:link, a:active, a:hover {
@@ -12,7 +12,7 @@ a, a:link, a:active, a:hover {
 }
 
 .demo-card-wide.mdl-card {
-  width: 90%;
+  width: auto;
   margin: 0 auto;
 }
 .demo-card-wide > .mdl-card__title {
