@@ -1,8 +1,6 @@
 // AngularJS App Initialization
 var app = angular.module('nagariyaApp', ['ngRoute', 'firebase']);
 
-document.addEventListener("touchmove", function(e) { e.preventDefault() });
-
 // Firebase References
 var database = firebase.database();
 var databaseRef = database.ref();
@@ -85,6 +83,10 @@ app.controller('CleanMyCityController', function($scope) {
 
   $scope.loggedUser = firebase.auth().currentUser;
 
+  $scope.openDialog = function() {
+    $('#spotfixmodal').modal('open');
+  };
+
 });
 
 // App Logic
@@ -100,3 +102,7 @@ function writeUserData(userId, name, email, imageUrl) {
     points: 0
   });
 }
+
+$('.modal-trigger').click(function(e){
+  console.log('asdasd');
+});
