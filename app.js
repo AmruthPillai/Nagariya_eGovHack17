@@ -17,6 +17,10 @@ app.config(['$routeProvider', function($routeProvider) {
     templateUrl: 'templates/home.html',
     controller: 'HomeController'
   }).
+  when('/profile', {
+    templateUrl: 'templates/profile.html',
+    controller: 'ProfileController'
+  }).
   otherwise({
     redirectTo: '/login'
   });
@@ -33,7 +37,6 @@ app.controller('LoginController', function($scope, $window) {
     var provider = new firebase.auth.GoogleAuthProvider();
     provider.addScope('https://www.googleapis.com/auth/plus.login');
 
-    this.auth.signInWithPopup(provider)
     firebase.auth().signInWithPopup(provider).then(function(result) {
       var token = result.credential.accessToken;
       user = result.user;
@@ -58,6 +61,15 @@ app.controller('HomeController', function($scope, $window) {
     $window.location.assign('#/login');
   } */
 
+});
+
+// Profile Controller
+app.controller('ProfileController', function($scope, $window) {
+  /* if (user == null) {
+    $window.location.assign('#/login');
+  } */
+
+  $scope.displayName = user.displayName;
 
 });
 
