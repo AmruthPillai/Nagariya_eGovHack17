@@ -54,5 +54,12 @@ a, a:link, a:active, a:hover {
   float: right;
 }
 
-.cmc-upload {
+.cmc-fix {
+  margin-top: 16px;
+}
+
+.cmc-fix-count {
+  font-size: 1.4em;
+  color: #4CAF50;
+  font-weight: bold;
 }
