@@ -60,9 +60,8 @@ app.controller('HomeController', function($scope, $window) {
 
 // Profile Controller
 app.controller('ProfileController', function($scope, $rootScope, $window) {
-
-  $scope.displayName = $rootScope.loggedInUser.displayName;
-
+  $scope.user = null;
+  $scope.user = $rootScope.loggedInUser;
 });
 
 // App Logic

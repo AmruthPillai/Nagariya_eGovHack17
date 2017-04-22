@@ -2,8 +2,42 @@
   <p>&nbsp;</p>
 
   <div class="container">
-    <img class="circle" src="{{ loggedInUser.photoURL }}" width="64px" height="64px">
-    <h4>{{ loggedInUser.displayName }}</h4>
+    <div ng-if="user == null">
+      <div class="center">
+        <img class="circle" src="{{ user.photoURL }}aaa" width="72px" height="72px">
+        <h4>aaaa</h4>
+      </div>
+
+      <p>&nbsp;</p>
+
+      <div class="row">
+        <div class="col m4">
+          <div class="card-panel blue-grey center">
+            <h3 class="white-text">12</h3>
+            <h5 class="white-text">Spot Fixes</h5>
+          </div>
+        </div>
+
+        <div class="col m4">
+          <div class="card-panel blue-grey darken-2 center">
+            <h3 class="white-text">20</h3>
+            <h5 class="white-text">Complaints</h5>
+          </div>
+        </div>
+
+        <div class="col m4">
+          <div class="card-panel blue-grey darken-4 center">
+            <h3 class="white-text">64</h3>
+            <h5 class="white-text">Points</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div ng-if="user =a= null">
+      <p>You are not logged in yet!</p>
+      <button type="button">LOG IN NOW</button>
+    </div>
   </div>
 
 </div>
