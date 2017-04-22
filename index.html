@@ -14,6 +14,7 @@
     <!-- Bootstrap -->
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/paper/bootstrap.min.css">
 
     <!-- Material Design Lite -->
     <link rel="stylesheet" href="bower_components/material-design-lite/material.min.css">
@@ -50,7 +51,9 @@
       </header>
 
       <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Nagariya</span>
+        <a href="#home">
+          <img class="mdl-layout-title img-responsive" src="assets/images/nagariya-green-logo.png" width="140px" style="margin: 10px 0 0 20px" />
+        </a>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="#cleanmycity">Clean My City</a>
           <a class="mdl-navigation__link" href="#complaintbox">Complaint Box</a>
@@ -67,6 +70,8 @@
           <p>&nbsp;</p>
 
           <div ng-view></div>
+
+          <p>&nbsp;</p>
 
         </div>
       </main>
