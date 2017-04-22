@@ -36,7 +36,17 @@ app.controller('CleanMyCityController', function($scope, $http, $firebaseArray) 
 
   $scope.incrementCount = function (post) {
     post.count = post.count + 1;
-
-    postsRef.update(post);
   };
+
+  var dialog = document.querySelector('dialog');
+    var showDialogButton = document.querySelector('#show-dialog');
+    if (! dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    showDialogButton.addEventListener('click', function() {
+      dialog.showModal();
+    });
+    dialog.querySelector('.close').addEventListener('click', function() {
+      dialog.close();
+    });
 });
