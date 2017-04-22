@@ -1,6 +1,8 @@
 // AngularJS App Initialization
 var app = angular.module('nagariyaApp', ['ngRoute', 'firebase']);
 
+document.addEventListener("touchmove", function(e) { e.preventDefault() });
+
 // Firebase References
 
 // Routes

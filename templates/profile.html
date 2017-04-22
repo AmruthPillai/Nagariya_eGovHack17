@@ -1,3 +1,9 @@
 <div ng-controller="ProfileController">
-  <h1 class="center">{{ displayName }}</h1>
+  <p>&nbsp;</p>
+
+  <div class="container">
+    <img class="circle" src="{{ loggedInUser.photoURL }}" width="64px" height="64px">
+    <h4>{{ loggedInUser.displayName }}</h4>
+  </div>
+
 </div>

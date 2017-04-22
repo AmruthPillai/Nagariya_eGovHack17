@@ -3,7 +3,10 @@
   <head>
     <!-- HTML5 Metadata -->
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="true">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
@@ -57,9 +60,9 @@
           <div class="background">
             <img src="assets/images/taj-mahal.jpg" height="100%">
           </div>
-          <a href="#!user"><img class="circle" src="{{ loggedInUser.photoURL }}"></a>
-          <a href="#!name"><span class="white-text name">{{ loggedInUser.displayName }}</span></a>
-          <a href="#!email"><span class="white-text email">{{ loggedInUser.email }}</span></a>
+          <img class="circle" src="{{ loggedInUser.photoURL }}">
+          <span class="white-text name">{{ loggedInUser.displayName }}</span>
+          <span class="white-text email">{{ loggedInUser.email }}</span>
         </div></li>
         <li><a href="#!"><i class="material-icons">perm_identity</i>Login</a></li>
         <li><div class="divider"></div></li>
