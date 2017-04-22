@@ -1,0 +1,35 @@
+body {
+  background: url('../images/paisley.png') repeat;
+}
+
+a, a:link, a:active, a:hover {
+  text-decoration: none;
+}
+
+.mdl-layout-title {
+  font: 2em 'Samarkan', 'Roboto', sans-serif;
+  color: white;
+}
+
+.demo-card-wide.mdl-card {
+  width: 90%;
+  margin: 0 auto;
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: url('../images/welcome_card.jpg') center / cover;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+
+.dashboard .mdl-card__title-text {
+  font-weight: 500;
+}
+
+.dashboard .mdl-button,
+.dashboard .mdl-card__title-text,
+.dashboard .mdl-card__supporting-text {
+  color: white;
+}
