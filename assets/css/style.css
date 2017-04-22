@@ -15,17 +15,30 @@ a, a:link, a:active, a:hover {
   width: auto;
   margin: 0 auto;
 }
+
 .demo-card-wide > .mdl-card__title {
   color: #fff;
   height: 176px;
   background: url('../images/welcome_card.jpg') center / cover;
 }
+
 .demo-card-wide > .mdl-card__menu {
   color: #fff;
 }
 
+.mdl-cell--4-col,
+.mdl-cell--4-col .mdl-card__title,
+.mdl-cell--4-col .mdl-card__title-text {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.mdl-card__icon {
+  padding: 22px 0 4px 0;
+}
+
 .dashboard .mdl-card__title-text {
-  font-weight: 500;
+  font-weight: 300;
 }
 
 .dashboard .mdl-button,
