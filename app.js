@@ -29,10 +29,6 @@ app.config(['$routeProvider', function($routeProvider) {
 // Controllers
 // Login Controller
 app.controller('LoginController', function($scope, $window) {
-  if (user != null) {
-    $location.path('/home');
-  }
-
   $scope.signInWithGoogle = function() {
     var provider = new firebase.auth.GoogleAuthProvider();
     provider.addScope('https://www.googleapis.com/auth/plus.login');
@@ -57,9 +53,6 @@ app.controller('LoginController', function($scope, $window) {
 
 // Home Controller
 app.controller('HomeController', function($scope, $window) {
-  /* if (user == null) {
-    $window.location.assign('#/login');
-  } */
 
 });
 
