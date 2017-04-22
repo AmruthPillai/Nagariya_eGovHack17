@@ -6,3 +6,6 @@ var app = angular.module('nagariyaApp', ['ngRoute', 'firebase']);
 // Routes
 
 // Controllers
+
+// App Logic
+$(".button-collapse").sideNav();

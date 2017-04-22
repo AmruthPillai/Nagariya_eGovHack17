@@ -1,3 +1,18 @@
-a {
-  text-decoration: none;
+/* Sticky Footer */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.nagariya-nav-logo {
+  margin-top: .3em;
+}
+
+.google-button {
+  margin-top: 40px;
 }
