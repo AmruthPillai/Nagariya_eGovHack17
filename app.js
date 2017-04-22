@@ -4,6 +4,8 @@ var app = angular.module('nagariyaApp', ['ngRoute', 'firebase']);
 document.addEventListener("touchmove", function(e) { e.preventDefault() });
 
 // Firebase References
+var database = firebase.database();
+var databaseRef = database.ref();
 
 // Routes
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
@@ -22,6 +24,10 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     templateUrl: 'templates/profile.html',
     controller: 'ProfileController'
   }).
+  when('/cleanmycity', {
+    templateUrl: 'templates/services/cleanmycity.html',
+    controller: 'CleanMyCityController'
+  }).
   otherwise({
     redirectTo: '/login'
   });
@@ -31,14 +37,21 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 // Controllers
 // Login Controller
 app.controller('LoginController', function($scope, $rootScope, $window) {
+
   $scope.signInWithGoogle = function() {
     var provider = new firebase.auth.GoogleAuthProvider();
     provider.addScope('https://www.googleapis.com/auth/plus.login');
 
     firebase.auth().signInWithPopup(provider).then(function(result) {
       var token = result.credential.accessToken;
-      $rootScope.loggedInUser = result.user;
-      console.log($rootScope.loggedInUser);
+      var user = result.user;
+
+      $rootScope.loggedUser = user;
+
+      writeUserData(user.uid,
+        user.displayName,
+        user.email,
+        user.photoURL);
 
       $window.location.assign('#/home');
     }).catch(function(error) {
@@ -54,15 +67,36 @@ app.controller('LoginController', function($scope, $rootScope, $window) {
 });
 
 // Home Controller
-app.controller('HomeController', function($scope, $window) {
+app.controller('HomeController', function($scope) {
+
+  $scope.loggedUser = firebase.auth().currentUser;
 
 });
 
 // Profile Controller
-app.controller('ProfileController', function($scope, $rootScope, $window) {
-  $scope.user = null;
-  $scope.user = $rootScope.loggedInUser;
+app.controller('ProfileController', function($scope) {
+
+  $scope.loggedUser = firebase.auth().currentUser;
+
+});
+
+// Clean My City Controller
+app.controller('CleanMyCityController', function($scope) {
+
+  $scope.loggedUser = firebase.auth().currentUser;
+
 });
 
 // App Logic
 $(".button-collapse").sideNav();
+
+function writeUserData(userId, name, email, imageUrl) {
+  firebase.database().ref('users/' + userId).set({
+    display_name: name,
+    email: email,
+    profile_picture : imageUrl,
+    spot_fixes: 0,
+    complaints: 0,
+    points: 0
+  });
+}
