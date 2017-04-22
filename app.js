@@ -6,7 +6,9 @@ document.addEventListener("touchmove", function(e) { e.preventDefault() });
 // Firebase References
 
 // Routes
-app.config(['$routeProvider', function($routeProvider) {
+app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+  $locationProvider.hashPrefix('');
+
   $routeProvider.
   when('/login', {
     templateUrl: 'templates/login.html',
