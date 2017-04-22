@@ -11,6 +11,10 @@ app.config(['$routeProvider', function($routeProvider) {
     templateUrl: 'templates/cleanmycity.html',
 		controller: 'CleanMyCityController'
   }).
+  when('/about', {
+    templateUrl: 'templates/about.html',
+		controller: 'AboutController'
+  }).
   otherwise({
     redirectTo: '/home'
   });
