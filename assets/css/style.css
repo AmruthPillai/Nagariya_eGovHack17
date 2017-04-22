@@ -55,11 +55,11 @@ a, a:link, a:active, a:hover {
 }
 
 .cmc-fix {
-  margin-top: 16px;
+  margin-top: 24px;
 }
 
 .cmc-fix-count {
   font-size: 1.4em;
-  color: #4CAF50;
   font-weight: bold;
+  margin-top: -8px;
 }

@@ -5,7 +5,7 @@
     <p style="font-size: 1em;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </div>
 
-  <div class="col-md-4">
+  <div class="col-sm-6 col-md-4">
     <div class="panel panel-default">
       <div class="panel-heading" style="padding: 0;">
         <img src="assets/uploads/garbage-1.jpg" class="cmc-upload img-responsive"/>
@@ -16,8 +16,8 @@
           <p class="cmc-user">- Amruth Pillai</p>
         </div>
         <div class="col-sm-2 cmc-fix">
-          <img src="assets/images/black-wrench.png" width="24px" height="24px" class="img-responsive cmc-fix-icon" /><br>
-          <p class="cmc-fix-count">32</p>
+          <img src="assets/images/black-wrench.png" width="24px" height="24px" class="img-responsive cmc-fix-icon" ng-init="count = 0;" ng-click="count = count + 1" /><br>
+          <p class="cmc-fix-count">{{ count }}</p>
         </div>
       </div>
     </div>
