@@ -1,3 +1,14 @@
-{
-  
-}
+[
+  {
+    "photo": "http://www.pointblank7.in/wp-content/uploads/2014/12/garbage.jpg",
+    "address": "Bengaluru, India",
+    "user": "Amruth Pillai",
+    "count": 32
+  },
+  {
+    "photo": "http://blogs.timesofindia.indiatimes.com/wp-content/uploads/2016/02/dump.jpg",
+    "address": "Mumbai, India",
+    "user": "Kushal S T",
+    "count": 12
+  }
+]

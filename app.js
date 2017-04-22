@@ -1,4 +1,6 @@
-var app = angular.module('nagariyaApp', ['ngRoute']);
+var app = angular.module('nagariyaApp', ['ngRoute', 'firebase']);
+
+var postsRef = firebase.database().ref().child("posts");
 
 // Routes
 app.config(['$routeProvider', function($routeProvider) {
@@ -25,6 +27,16 @@ app.controller('HomeController', function($scope) {
 
 });
 
-app.controller('CleanMyCityController', function($scope) {
+app.controller('CleanMyCityController', function($scope, $http, $firebaseArray) {
+  $scope.posts = $firebaseArray(postsRef);
 
+  $scope.dismissDialog = function () {
+    $('#cmc-jumbo-dialog').css("display", "none");
+  };
+
+  $scope.incrementCount = function (post) {
+    post.count = post.count + 1;
+
+    postsRef.update(post);
+  };
 });
