@@ -35,8 +35,31 @@
     <!-- Google Web Fonts: Open Sans -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
     <style> body { font-family: 'Open Sans', sans-serif; } </style>
+
+    <!-- Firebase & AngularFire -->
+    <script src="node_modules/firebase/firebase.js" charset="utf-8"></script>
+    <script src="node_modules/angularfire/dist/angularfire.min.js" charset="utf-8"></script>
+
+    <!-- Initialize Firebase -->
+    <script>
+      var config = {
+        apiKey: "AIzaSyDEo43aFELDxuE_HkZ2WhYLX6adXwdRB8A",
+        authDomain: "nagariya-76d80.firebaseapp.com",
+        databaseURL: "https://nagariya-76d80.firebaseio.com",
+        projectId: "nagariya-76d80",
+        storageBucket: "nagariya-76d80.appspot.com",
+        messagingSenderId: "195748617342"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    <!-- Custom JS & CSS -->
+    <script src="app.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
   </head>
-  <body>
+  <body ng-app="nagariyaApp">
+
+    <h1>Hello, World!</h1>
 
   </body>
 </html>
