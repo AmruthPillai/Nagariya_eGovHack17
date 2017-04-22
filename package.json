@@ -1,0 +1,19 @@
+{
+  "name": "nagariya",
+  "version": "1.0.0",
+  "description": "<img src=\"https://github.com/egovernments/t35-hackapr17/blob/master/assets/images/nagariya-logo.png?raw=true\" />",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/egovernments/t35-hackapr17.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/egovernments/t35-hackapr17/issues"
+  },
+  "homepage": "https://github.com/egovernments/t35-hackapr17#readme"
+}
