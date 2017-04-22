@@ -13,6 +13,10 @@ app.config(['$routeProvider', function($routeProvider) {
     templateUrl: 'templates/cleanmycity.html',
 		controller: 'CleanMyCityController'
   }).
+  when('/cleanmycity/newpost', {
+    templateUrl: 'templates/cleanmycity/new-post.html',
+		controller: 'CleanMyCityNewPostController'
+  }).
   when('/about', {
     templateUrl: 'templates/about.html',
 		controller: 'AboutController'
@@ -37,16 +41,4 @@ app.controller('CleanMyCityController', function($scope, $http, $firebaseArray) 
   $scope.incrementCount = function (post) {
     post.count = post.count + 1;
   };
-
-  var dialog = document.querySelector('dialog');
-    var showDialogButton = document.querySelector('#show-dialog');
-    if (! dialog.showModal) {
-      dialogPolyfill.registerDialog(dialog);
-    }
-    showDialogButton.addEventListener('click', function() {
-      dialog.showModal();
-    });
-    dialog.querySelector('.close').addEventListener('click', function() {
-      dialog.close();
-    });
 });
