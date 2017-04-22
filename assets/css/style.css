@@ -6,11 +6,6 @@ a, a:link, a:active, a:hover {
   text-decoration: none;
 }
 
-.mdl-layout-title {
-  font: 2em 'Samarkan', 'Roboto', sans-serif;
-  color: white;
-}
-
 .demo-card-wide.mdl-card {
   width: auto;
   margin: 0 auto;
@@ -18,8 +13,8 @@ a, a:link, a:active, a:hover {
 
 .demo-card-wide > .mdl-card__title {
   color: #fff;
-  height: 176px;
-  background: url('../images/welcome_card.jpg') center / cover;
+  height: 250px;
+  background: url('../images/taj-mahal.jpg') center / cover;
 }
 
 .demo-card-wide > .mdl-card__menu {
@@ -45,4 +40,8 @@ a, a:link, a:active, a:hover {
 .dashboard .mdl-card__title-text,
 .dashboard .mdl-card__supporting-text {
   color: white;
+}
+
+.mdl-navigation__link {
+  color: white !important;
 }
